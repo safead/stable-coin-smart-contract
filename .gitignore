@@ -1,3 +1,8 @@
-_assets/
-node_modules/
-build/
+/node_modules
+.idea
+/build
+/_assets
+/_blockchain
+/_signaling_server
+count_lines.js
+/src/css/onsenui/css-components-src/node_modules

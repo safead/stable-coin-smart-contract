@@ -1,25 +1,25 @@
 const { constants, expectEvent } = require('openzeppelin-test-helpers');
 const { ZERO_ADDRESS } = constants;
 const { expect } = require('chai');
-const EnfaceCurrency = artifacts.require('EnfaceCurrency');
+const EnfaceUsd = artifacts.require('EnfaceUsd');
 
 const initialSupply = 100;
 
-contract('EnfaceCurrency', function ([_, creator]) {
+contract('EnfaceUsd', function ([_, creator]) {
   beforeEach(async function () {
-    this.token = await EnfaceCurrency.new(initialSupply, { from: creator });
+    this.token = await EnfaceUsd.new(initialSupply, { from: creator });
   });
 
   it('has a name', async function () {
-    expect(await this.token.name()).to.equal('Enface USDT');
+    expect(await this.token.name()).to.equal('Enface USD');
   });
 
   it('has a symbol', async function () {
-    expect(await this.token.symbol()).to.equal('EUSDT');
+    expect(await this.token.symbol()).to.equal('EUSD');
   });
 
-  it('has 18 decimals', async function () {
-    expect(await this.token.decimals()).to.be.bignumber.equal('18');
+  it('has 2 decimals', async function () {
+    expect(await this.token.decimals()).to.be.bignumber.equal('2');
   });
 
   it('assigns the initial total supply to the creator', async function () {

@@ -4,20 +4,21 @@ import "./IERC20.sol";
 import "./ERC20.sol";
 import "./Context.sol";
 import "./Ownable.sol";
-import "./ERC20Burnable.sol";
 import "./ERC20Detailed.sol";
+import "./ERC20Burnable.sol";
+import "./ERC20Mintable.sol";
 
-contract EnfaceCurrency is ERC20Detailed, Ownable {
+contract EnfaceEuro is ERC20Detailed, ERC20Mintable, ERC20Burnable, Ownable {
 
     using SafeMath for uint256;
     mapping (address => uint256) private _balances;
     mapping (address => mapping (address => uint256)) private _allowances;
     uint256 private _totalSupply = 0;
 
-    constructor(uint256 initialSupply) public ERC20Detailed("Enface USDT", "EUSDT", 18) {  
+    constructor(uint256 initialSupply) public ERC20Detailed("Enface EURO", "EEURO", 2) {
         if (initialSupply > 0) _mint(msg.sender, initialSupply);
     }
- 
+
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
     }
