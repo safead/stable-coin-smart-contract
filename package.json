@@ -1,0 +1,19 @@
+{
+  "name": "enface-currency",
+  "version": "1.0.1",
+  "description": "Enface currency smart contracts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle.cmd test"
+  },
+  "author": "Kochetkov Anton",
+  "license": "ISC",
+  "devDependencies": {
+    "openzeppelin-test-helpers": "^0.4.2"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
+}
